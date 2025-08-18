@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "move_tab",
+  "version": "3.0",
+  "description": "商材作成_特定の入力欄でtabを押したときに指定した順番に移動します",
+  "icons": {
+    "24": "images/icon24.png",
+    "48": "images/icon48.png",
+    "96": "images/icon96.png"
+
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "https://world-switch.com/okoku/admin/products/*"
+      ]
+    }
+  ]
+}
