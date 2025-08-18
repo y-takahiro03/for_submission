@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "一括入力_moovTab",
+  "version": "1.0",
+  "description": "商品情報を入力する際のtab移動を補助します",
+  "icons": {
+    "24": "images/icon24.png",
+    "48": "images/icon48.png",
+    "96": "images/icon96.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "https://world-switch.com/okoku/admin/products/*"
+      ]
+    }
+  ]
+}

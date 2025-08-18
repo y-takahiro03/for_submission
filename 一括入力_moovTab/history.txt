@@ -1,0 +1,68 @@
+10/13
+
+デフォルトでITFOReCのラジオボタンが選択されるようにする
+    ラジオボタンに既に値がある場合は、変更しないようにする
+
+ラジオボタンの属性 checked があるときは、処理をしない 
+<input type="radio" name="product_detail59" value="ITFOReC" checked="checked">
+
+targetElement = document.getElementsByName("product_detail59");
+
+NodeList が返ってくる NodeList[1] のラジオボタンを選択にする
+
+完成
+
+10/14
+
+商品入力ページを開いたときに、各ページで一番最初に入力する欄にカーソルが合うようにする
+    中段にある、商品情報 商品詳細 出品詳細 のタブを押したときに、カーソルを合わせる項目を決める予定
+        ページの何個目のinput要素にする　or 厳しく選択する
+        
+    カーソルをあてたら、ひらがな入力と英数字入力を変更する予定
+    かな：商品情報　出品情報 
+    英数字：商品詳細
+
+商品詳細:category7896 > 数値を入力するinputタグ product_detail89 (このinputタグのidが製品によって変更になる可能性がある 
+    もし製品の種類によって異なる場合はinput要素をdocument.querySelectorで取得してfocusする予定) この時に 英数字入力
+出品詳細:sell_data > コンディションを入力するテキストエリア product_detail214 この時に かな入力
+
+
+NodeList の中に知りたい要素が何番目にあるか確認する
+　→　アイテムによって、input要素の数が違うので、配列の何番目はやめる
+
+const allElements = document.querySelectorAll('input');
+const targetId = 'product_detail89';
+
+let index = -1; // 見つからなかった場合に -1 を返すように初期化
+
+allElements.forEach((element, i) => {
+    if (element.id === targetId) {
+        index = i;
+        return; // 見つかったらループを中断
+    }
+});
+
+console.log(`id: ${targetId} の要素は、${index} 番目にあります。`);
+
+div要素のクラスを元にDOMを見て、input要素を特定する
+クラスのついた div の子孫要素　
+今回だと div > ul > li > strong > input の input 
+
+const targetDiv = document.querySelector('.box-content.gridster.ready'); // 対象の div を取得
+const inputElements = targetDiv.querySelectorAll('input'); // div 内の全ての input 要素を取得
+
+inputElements[0]
+
+inputElements.length で NodeList の数も確認できると思う
+
+
+
+取得できた!
+
+const test = document.getElementsByClassName('custom-combobox-input');
+custom-combobox-input
+1 class custom-conbo [4] 
+2 id product_detail309
+3 name product_detail34
+4 class custom-conbo [4] 
+5 id product_detail52
