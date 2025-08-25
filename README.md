@@ -21,6 +21,18 @@
 ### 進捗管理を正確にする機能
 5. リアルタイム自動カウンター: 商品の登録が完了するたびに、商品コード、作業者、登録時間をlocalStorageに自動で記録し、リアルタイムで現在の進捗数を表示します。
 6. 履歴確認機能: 左右の矢印ボタンで過去の記録を確認でき、別の日に作業を開始する際には、データが自動でクリアされるように設定しました。これにより、正確な時間ごとの進捗報告が可能になりました。
+#### 商品番号を入力する画面
+<img width="50%" src="./images/screen_product_information.png">
+
+#### カウンターの画面
+<img width="50%" src="./images/screen_counter.png">
+
+#### localStorageのデータ画面
+<img width="50%" src="./images/screen_local_storage.png">
+
+#### 機能一覧の画面 
+<img width="50%" src="./images/function_list.png">
+
 - - -
 ## 【他部署からの依頼/商材作成_moveTab】
 ツールが自身の部署で活用される中で、他部署の担当者から「Tabキーでの入力移動が非効率のため改善してほしい」と要望を受け実装しました。
